@@ -1,4 +1,7 @@
-@import url('http://fonts.cdnfonts.com/css/latin-modern-roman');
+@font-face {
+    font-family: LMRoman10;
+    src: url(latin-modern-roman/lmroman10-regular.otf);
+}
 
 * {
     margin: 0;
