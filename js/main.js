@@ -1,6 +1,7 @@
 const date = new Date().toLocaleDateString()
 const counter = document.querySelector('.counter')
 const quotediv = document.querySelector('.quote')
+const title = document.querySelector('.title')
 
 const quotes = [
   "Mathematics consists of proving the most obvious thing in the least obvious way. <br> — George Pólya, Hungarian mathematician",
@@ -25,20 +26,34 @@ const quotes = [
 quotediv.innerHTML = quotes[Math.floor(Math.random() * quotes.length)]
 
 // Set the date we're counting down to
-const firstRoundDate = new Date("Nov 9, 2022 15:15:0").getTime()
+const firstRoundDate = new Date("Nov 9, 2022 15:30:0").getTime()
+const secoundRoundDate = new Date("Jan 11, 2023 15:30:0").getTime()
+
+const rounds = [firstRoundDate, secoundRoundDate]
+
 
 function counterFunc(){
+  
   // Get today's date and time
   let dateNow = new Date().getTime()
+  let distance
+
   
-  // Find the distance between now and the count down date
-  let distance = firstRoundDate - dateNow
+  for(let i = 0; i < rounds.length; i++){
+    if(rounds[i] - dateNow < 0){
+      continue
+    }
+    distance = rounds[i] - dateNow
+    title.innerHTML= `Contador até à ${i+1}º eliminatória das OPM`
+    break
+  }
 
   // Time calculations for days, hours, minutes and seconds
   let days = Math.floor(distance / (1000 * 60 * 60 * 24))
   let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
   let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60))
   let seconds = Math.floor((distance % (1000 * 60)) / 1000)
+  
 
   // Display the result in the element
   counter.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s "
