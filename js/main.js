@@ -28,9 +28,10 @@ quotediv.innerHTML = quotes[Math.floor(Math.random() * quotes.length)]
 // Set the date we're counting down to
 const firstRoundDate = new Date("Nov 9, 2022 15:30:0").getTime()
 const secoundRoundDate = new Date("Jan 11, 2023 15:30:0").getTime()
+const finals_1 = new Date("Mar 30, 2023 15:30:0").getTime()
+const finals_2 = new Date("Apr 2, 2023 15:30:0").getTime()
 
-const rounds = [firstRoundDate, secoundRoundDate]
-
+const rounds = [firstRoundDate, secoundRoundDate, finals_1, finals_2]
 
 function counterFunc(){
   
@@ -45,6 +46,9 @@ function counterFunc(){
     }
     distance = rounds[i] - dateNow
     title.innerHTML= `Contador até à ${i+1}º eliminatória das OPM`
+    if(i >= 2){
+      title.innerHTML= `Contador até ao dia ${i-1}º da final nacional das OPM`
+    }
     break
   }
 
