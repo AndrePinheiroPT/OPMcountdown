@@ -17,7 +17,7 @@ body{
 }
 
 body.secret{
-    background-image: linear-gradient(black 60%, transparent), url('../css/math.jpg');
+    background-color: linear-gradient(black 60%, transparent);
     background-position: bottom;
     background-repeat: no-repeat;
 }
@@ -35,11 +35,8 @@ h1, h2, h3{
 }
 
 div.text{
-    background-color: #36383F;
     padding: 20px;
-    box-shadow: 3px 3px 3px #1e1f23;
-    text-align: justify;
-    margin-top: 20px;
+    margin-top: 100px;
     margin-left: auto;
     margin-right: auto;
     width: 500px;
@@ -72,4 +69,13 @@ blockquote{
     width: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.key{
+    margin-top: 50px;
+    font-family: 'LMRoman10', sans-serif;
+    color: white;
+    background-color: rgb(22, 22, 22);
+    outline: none;
+    border: 0;
 }
